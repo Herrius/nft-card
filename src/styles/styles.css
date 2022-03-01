@@ -37,14 +37,17 @@ body{
     margin: 0 1.5rem;
     background-color: var(--card-BG);
     height: 75vh;
+    border-radius: 1rem;
 }
 .card-img{
     width: calc(300px - 1.5rem);
+    position: relative;
 }
 .card-img img{
     width: inherit;
     height: inherit;
     object-fit: fill;
+    border-radius: 1rem;
 }
 .title{
     color: var(--white);
@@ -93,10 +96,60 @@ body{
     color: var(--white);
     margin-left: 4px;
 }
-@media only screen and (min-width:1440px) {
+.marker:hover{
+    color: cyan;
+    transition: 1s ease-in-out;
+}
+.title span:hover{
+    transition: 1s ease-in-out ;
+    color: cyan;
+}
+.card-img img:hover{
+    color: cyan;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.overlay:hover{
+    opacity: 1;
+}
+.overlay img{
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    z-index: 15;
+    top: 40%;
+    left: 37%;
+
+}
+.overlay div{
+    top: 0;
+    position: absolute;
+    z-index: 10;
+    width: inherit;
+    height: inherit;
+
+}
+
+.overlay div:hover{
+    opacity: 0.5;
+    transition: opacity 1s ease-in-out;
+    background-color: cyan;
+}
+@media only screen and (min-width:1024px) {
     .card{
-        height: 600px;
+        height: 550px;
         width: 350px;
     }
-    
+    .card-img{
+        width:300px;
+        height: 300px;
+    }
+
 }
